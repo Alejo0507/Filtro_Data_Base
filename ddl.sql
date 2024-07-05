@@ -23,7 +23,7 @@ CREATE TABLE oficina (
 	CONSTRAINT Pk_id_oficina PRIMARY KEY(id_oficina)
 );
 
-CREATE TABLE empĺeado (
+CREATE TABLE empleado (
 	id_empleado INT(11),
 	nombre VARCHAR(50),
 	apellido_1 VARCHAR(50),
@@ -54,7 +54,7 @@ CREATE TABLE cliente (
 	id_empleado_responsable INT(11),
 	limite_credito DECIMAL(15,2),
 	CONSTRAINT Pk_id_cliente PRIMARY KEY(id_cliente),
-	CONSTRAINT Fk_id_empleado_cliente FOREIGN KEY (id_empleado_responsable) REFERENCES empĺeado(id_empleado)
+	CONSTRAINT Fk_id_empleado_cliente FOREIGN KEY (id_empleado_responsable) REFERENCES empleado(id_empleado)
 );
 
 
