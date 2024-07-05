@@ -30,8 +30,6 @@ CREATE TABLE empĺeado (
 	apellido_2 VARCHAR(50),
 	extension VARCHAR(10),
 	email VARCHAR(100),
-	direccion_1 VARCHAR(50),
-	direccion_2 VARCHAR(50),
 	id_oficina VARCHAR(10),
 	id_jefe INT(11),
 	puesto VARCHAR(50),
