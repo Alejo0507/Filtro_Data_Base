@@ -141,3 +141,25 @@ FROM cliente c
 JOIN empleado e ON c.id_empleado_responsable = e.id_empleado
 JOIN pago p ON p.id_cliente = c.id_cliente 
 WHERE p.id_cliente IN ('NULL');
+
+Devuelve el nombre de los clientes que han hecho pagos y el nombre de sus
+representantes junto con la ciudad de la oficina a la que pertenece el
+representante.
+
+SELECT c.nombre , e.nombre AS NOMBRE_RESPONSABLE, e.apellido_1, o.ciudad AS CIUDAD_OFICINA
+FROM cliente c
+JOIN empleado e ON c.id_empleado_responsable = e.id_empleado
+JOIN pago p ON p.id_cliente = c.id_cliente 
+JOIN oficina o ON o.id_oficina = e.id_oficina
+WHERE p.id_cliente NOT IN ('NULL');
+
+Devuelve el nombre de los clientes que no hayan hecho pagos y el nombre
+de sus representantes junto con la ciudad de la oficina a la que pertenece el
+representante.
+
+SELECT c.nombre , e.nombre AS NOMBRE_RESPONSABLE, e.apellido_1, o.ciudad AS CIUDAD_OFICINA
+FROM cliente c
+JOIN empleado e ON c.id_empleado_responsable = e.id_empleado
+JOIN pago p ON p.id_cliente = c.id_cliente 
+JOIN oficina o ON o.id_oficina = e.id_oficina
+WHERE p.id_cliente IN ('NULL');
